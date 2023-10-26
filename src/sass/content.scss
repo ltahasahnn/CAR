@@ -1,0 +1,281 @@
+/* ===== rightMenu ===== */
+.rightMenu{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transition: .4s;
+  width: 300px;
+  height: 100%;
+  padding: 1rem;
+  top: 85px;
+  right: 0;
+  opacity: 0;
+  background-color: #fff;
+  transform-origin: right;
+  transform: rotateY(90deg);
+  .col{
+    align-items: center;
+    gap: 15px;
+    .rightMenu-search{
+      width: 100%;
+      align-items: center;
+      height: fit-content;
+      padding:.5rem 1rem;
+      border-bottom: 1px solid rgba($color: #000000, $alpha: 1.0);
+      border-radius: 5px;
+    .search{
+      width: 100%;
+      background-color: transparent;
+      outline: 0;
+      padding: 0 .8rem;
+      font-size: .8rem;
+    }
+    .search::placeholder{
+      color: rgba(8, 145, 178, .8);
+      font-weight: 500;
+    }
+    .icon:nth-child(1){
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      font-size: .8rem;
+    }
+    .icon:nth-child(3){
+      font-size: .8rem;
+      cursor: pointer;
+    }
+    }
+  }
+  .avatar{
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    .images{
+      transition: .2s;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(0, 0, 0, 0.15) 0px 0px 0px 1px;
+      cursor: pointer;
+    }
+    .images:hover{
+      box-shadow: rgba(0, 0, 0, .5) 0px 1px 10px 0px, rgba(0, 0, 0, .5) 0px 0px 0px 1px;
+    }
+  }
+
+  .location{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    font-size: .8rem;
+    line-height: 2;
+    .col{
+      .h2{
+        font-weight: 400;
+      }
+    }
+    .selectLocation{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-style: solid;
+      font-weight: bold;
+      margin-top: 10px;
+      height: 40px;
+      width: 150px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px 0px rgba(8, 145, 178, .5);
+      cursor: pointer;
+
+      .selectLocationBottom{
+        transition: .5s;
+        position: absolute;
+        text-align: center;
+        transform-origin: top;
+        top: 40px;
+        color: #000000;
+        height: 0;
+        width: 100%;
+        background-color: rgba(6,182,212,1);
+        .list{
+          width: 100%;
+          .list-item{
+            color: #fff;
+            border-width: 1px;
+            border-style: solid;
+            border-color: 
+            #fff
+            transparent
+            #fff
+            transparent
+            ;
+            padding: .5rem 0;
+            width: 100%;
+          }
+        }
+      }
+      .selectLocationBottom.active{
+        transition: .5s;
+        height: 175px;
+        overflow: scroll;
+        .list{
+          .list-item{
+            transition: .2s;
+          }
+          .list-item:hover{
+            background-color: rgba(34,211,238,1);
+          }
+        }
+      }
+    }
+  }
+}
+.rightMenu.active{
+  transform-origin: right;
+  transform: rotateY(0);
+  right: 0;
+  opacity: 1;
+}
+
+/* ===== brand ===== */
+#brands{
+  .brands-item{
+    display: flex;
+    padding: 1rem;
+    gap: .65rem;
+    width: 100%;
+    overflow: scroll;
+    .brandCard{
+      display: flex;
+      flex-direction: column;
+      width: 100px;
+      height: 100px;
+      border-radius: 15px;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+      cursor: pointer;
+      .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 75px;
+        .images{
+          width: 50%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: .8rem;
+      }
+    }
+    .brandCard:active{
+      scale: .95;
+    }
+  }
+}
+
+/* ===== recommend ===== */
+#recommends{
+  display: flex;
+  width: 100%;
+  .recommend-item{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 0 auto;
+    .favorite{
+      cursor: pointer;
+    }
+    .favorite:active{
+      scale: .95;
+    }
+    .recommend-image{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .images{
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+      }
+    }
+    .col{
+      .row{
+        color: #333333;
+      }
+      .row:nth-child(1){
+        margin-top: 1rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      .row:nth-child(2){
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .row>span:nth-child(2){
+        font-weight: 500;
+        margin-left: 1rem;
+      }
+    }
+    .carDetails{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      font-weight: 500;
+      width: 100%;
+      font-size: 1.2rem;
+      .item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+        border-radius: 7.5px;
+        .item-detail{
+          width: 100%;
+        }
+      }
+    }
+    .colorDetails{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      .color{
+        align-items: center;
+        justify-content: center;
+        margin-left: 4rem;
+      }
+      .box{
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+      }
+      .box:active{
+        scale: .95;
+      }
+      .blue{
+        background-color: #192655;
+      }
+      .red{
+        background-color: #C70039;
+      }
+      .green{
+        background-color: #445D48;
+      }
+    }
+  }
+}
