@@ -4,10 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(sass/content.scss);
-@import url(sass/footer.scss);
-@import url(sass/header.scss);
-@import url(sass/style.scss);
+@import url(scss/content.scss);
+@import url(scss/footer.scss);
+@import url(scss/header.scss);
+@import url(scss/style.scss);
 
 *{
   padding: 0;
